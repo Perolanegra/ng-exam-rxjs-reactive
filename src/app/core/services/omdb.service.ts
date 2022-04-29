@@ -13,9 +13,4 @@ export class OMDbService {
     );
   }
 
-  subOMDbSearch(subReddit: string, search: string) {
-    return this.http.get<OMDbResponse>(
-      `https://www.reddit.com/r/${subReddit}/search.json?restrict_sr=on&q=${search}&sort=comment&limit=50`
-    );
-  }
 }
