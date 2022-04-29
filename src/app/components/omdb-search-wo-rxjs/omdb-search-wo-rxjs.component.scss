@@ -1,0 +1,19 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  width: 90vw;
+
+  mat-slide-toggle {
+    align-self: end;
+    margin-bottom: 2rem;
+  }
+
+  .imgs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 0.5rem;
+  }
+}

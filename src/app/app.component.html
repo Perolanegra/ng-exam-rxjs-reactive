@@ -1,0 +1,41 @@
+<mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+  <mat-tab label="Search">
+    <mat-tab-group mat-align-tabs="center" animationDuration="0ms" headerPosition="below">
+      <mat-tab label="Imperativo">
+        <div style="display: flex; flex-direction: column; text-align: center;">
+          <omdb-search-wo-rxjs></omdb-search-wo-rxjs>
+          <h2>Por favor utilize o modo Rxjs, pois o imperativo ainda não está funcional</h2>
+          <h2>O Paginator também está incompleto.</h2>
+        </div>
+      </mat-tab>
+      <mat-tab label="RxJS">
+        <omdb-search (soughtItems)="onSoughtItems($event)"></omdb-search>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-tab>
+
+  <mat-tab label="Histórico">
+    <app-default-list (removed)="setHistoricStorage($event)" [historicList]="historicList"
+      [searchedList]="historicList"></app-default-list>
+  </mat-tab>
+
+  <mat-tab label="About me">
+
+    <div class="outer-container-me">
+      <img
+        src="https://media-exp1.licdn.com/dms/image/C4E03AQEREwHCFPxYxg/profile-displayphoto-shrink_800_800/0/1605622523705?e=1656547200&v=beta&t=5e15_XZ6X4c8FOUcfvtf4YZ-ubLlrjtv4vpRXBzE7So"
+        alt="Avatar Igor" >
+      <p>Igor - 25 years old</p>
+      <p>Angular Frontend Engineer</p>
+      <p>Founder of AngularBA</p>
+      <p>Enthusiast for JS</p>
+      <p>Linkedin: /in/devbaiano/</p>
+    </div>
+
+
+  </mat-tab>
+
+  <ng-template #loading>
+    <mat-spinner [diameter]="20"></mat-spinner>
+  </ng-template>
+</mat-tab-group>

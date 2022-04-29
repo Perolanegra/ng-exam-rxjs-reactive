@@ -1,0 +1,19 @@
+<mat-form-field appearance="outline">
+  <mat-label>Buscar</mat-label>
+  <input
+    type="text"
+    placeholder="Pick one"
+    aria-label="Number"
+    matInput
+    [formControl]="searchControl"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option
+      *ngFor="let option of items"
+      [value]="option.nome"
+    >
+      {{ option.codigo }} - {{ option.nome }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

@@ -1,0 +1,25 @@
+<div class="search-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Historic Movies</mat-label>
+    <input (keyup)="onDelete($event)" matInput [formControl]="search" placeholder="Filter historic movies" />
+  </mat-form-field>
+
+  <div class="imgs">
+    <ng-container *ngFor="let r of searchedList">
+      <mat-card>
+        <img  [src]="r?.Poster === 'N/A' ? defaultPosterImg : r?.Poster" [alt]="r?.Title" />
+        <div class="card-body">
+          <p class="card-title">{{r['Title']}}</p>
+          <p class="card-text">Ano: {{r['Year']}}</p>
+          <p class="card-text">Data de Busca: {{r['dateSearched'] | date: 'dd/MM/yyyy HH:mm' }}</p>
+          <mat-icon
+          (click)="removeData(r)"
+          aria-label="Remover"
+          matTooltip="Remover"
+          >clear</mat-icon>
+        </div>
+      </mat-card>
+    </ng-container>
+  </div>
+
+</div>

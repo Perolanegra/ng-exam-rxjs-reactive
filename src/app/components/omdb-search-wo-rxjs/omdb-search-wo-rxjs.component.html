@@ -1,0 +1,19 @@
+<div class="search-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Movies</mat-label>
+    <input
+      matInput
+      (keyup)="doSearch($event)"
+      placeholder="type something to search"
+    />
+  </mat-form-field>
+  <div class="imgs">
+    <ng-container class="imgs" *ngFor="let img of results">
+      <img
+        *ngIf="shouldRenderImg(img)"
+        [src]="img.data.thumbnail"
+        [alt]="img.data.title"
+      />
+    </ng-container>
+  </div>
+</div>

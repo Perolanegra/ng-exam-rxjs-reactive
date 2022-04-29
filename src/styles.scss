@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@use "sass:map";
+@import "~@angular/material/theming";
+@include mat-core();
+
+html,
+body {
+  height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+$lightGreen: mat-palette($mat-light-green);
+$amber: mat-palette($mat-amber);
+$blueGrey: mat-palette($mat-blue-grey);
+$orange: mat-palette($mat-orange);
+$lightBlue: mat-palette($mat-light-blue);
+$cyan: mat-palette($mat-cyan);
+
+$app-color: mat-light-theme($cyan, $lightGreen, $lightBlue);
+$primary: map.get($app-color, primary);
+$accent: map.get($app-color, accent);
+$warn: map.get($app-color, warn);
+$background: map.get($app-color, background);
+$foreground: map.get($app-color, foreground);
+
+@include angular-material-theme($app-color);
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/**Main Tabs */
+.mat-tab-label {
+  color: #000;
+}
+
+.mat-tab-body-wrapper {
+  min-height: 50vh;
+}
+
+.mat-tab-body-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: unset !important;
+}
+
+// -----------Modal----------------
+.mat-dialog-container {
+  min-height: 87vh !important;
+  min-width: 70vw;
+  padding-top: 0.5rem !important;
+}
+/**Maps */
+.agm-map-container-inner {
+  width: 48vw !important;
+  height: 500px !important;
+}
+
+/**Stepper */
+.mat-vertical-stepper-header .mat-step-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/**Mat-list */
+.mat-list-base .mat-list-item .mat-list-text,
+.mat-list-base .mat-list-option .mat-list-text {
+  flex-direction: row !important;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+/** spinner */
+.mat-progress-spinner {
+  left: 50%;
+  top: 50%;
+}
+
+/** PDF */
+.ng2-pdf-viewer-container {
+overflow: unset !important;
+}
+
+.pdfViewer .page canvas {
+  width: 80vw !important;
+  height: 80vh !important;
+}
+
+
+.pdfViewer .canvasWrapper {
+  height: unset !important;
+}

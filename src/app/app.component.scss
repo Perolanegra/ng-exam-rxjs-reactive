@@ -1,0 +1,35 @@
+.mat-tab-group {
+  height: 100%;
+}
+
+omdb-search {
+  height: 100%;
+}
+
+.slides {
+  display: flex;
+
+  .slide-controls {
+    display: flex;
+    align-items: flex-end;
+
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+}
+
+.outer-container-me {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 1.5rem;
+  position: relative;
+  top: 30px;
+  line-height: 50px;
+  overflow: hidden !important;
+
+  img {
+    width: 250px;
+  }
+}
